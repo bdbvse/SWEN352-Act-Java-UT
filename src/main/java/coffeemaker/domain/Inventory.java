@@ -32,10 +32,7 @@ public class Inventory {
   }
 
   /**
-   * Returns the current number of coffee units in
-   * the this.
-   *
-   * @return int
+   * Returns the current number of coffee units in the this.
    */
   public int getCoffee() {
     return coffee;
@@ -70,10 +67,7 @@ public class Inventory {
   }
 
   /**
-   * Returns the current number of milk units in
-   * the this.
-   *
-   * @return int
+   * Returns the current number of milk units in the this.
    */
   public int getMilk() {
     return milk;
@@ -108,10 +102,7 @@ public class Inventory {
   }
 
   /**
-   * Returns the current number of sugar units in
-   * the this.
-   *
-   * @return int
+   * Returns the current number of sugar units in the this.
    */
   public int getSugar() {
     return sugar;
@@ -146,10 +137,7 @@ public class Inventory {
   }
 
   /**
-   * Returns the current number of chocolate units in
-   * the this.
-   *
-   * @return int
+   * Returns the current number of chocolate units in the this.
    */
   public int getChocolate() {
     return chocolate;
@@ -185,10 +173,9 @@ public class Inventory {
   }
 
   /**
-   * Returns true if there are enough ingredients to make
-   * the beverage.
+   * Returns true if there are enough ingredients to make the beverage.
    *
-   * @return boolean
+   * @return boolean  true, if the inventory has the necessary ingredients; otherwise false
    */
   protected boolean enoughIngredients(Recipe r) {
     boolean isEnough = true;
@@ -208,9 +195,7 @@ public class Inventory {
   }
 
   /**
-   * Removes the ingredients used to make the specified
-   * recipe.  Assumes that the user has checked that there
-   * are enough ingredients to make
+   * Removes the ingredients used to make the specified recipe.
    */
   public boolean useIngredients(Recipe r) {
     if (enoughIngredients(r)) {
@@ -225,10 +210,7 @@ public class Inventory {
   }
 
   /**
-   * Returns a string describing the current contents
-   * of the this.
-   *
-   * @return String
+   * Returns a string describing the current contents of the this.
    */
   public String toString() {
     StringBuffer buf = new StringBuffer();
@@ -247,3 +229,4 @@ public class Inventory {
     return buf.toString();
   }
 }
+
