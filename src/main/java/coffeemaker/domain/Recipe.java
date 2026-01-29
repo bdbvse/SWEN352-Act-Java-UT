@@ -4,9 +4,11 @@ import coffeemaker.exceptions.RecipeException;
 
 /**
  * A Recipe is an Entity component that maintains the data for a specific coffee product.
- * It must have a non-null String name and non-negative price and ingredient amounts.
+ * It must have a non-blank String name and non-negative price and ingredient amounts.
+ * Two Recipe objects are considered the same if they share the same name.
  *
  * @author Sarah Heckman
+ * @author Bryan Basham
  */
 public class Recipe {
 
@@ -55,19 +57,18 @@ public class Recipe {
 
   /**
    * Set the amount of price needed for this recipe.
-   * @param price The price to set.
    */
   public void setPrice(String price) throws RecipeException {
     int amtPrice;
     try {
       amtPrice = Integer.parseInt(price);
     } catch (NumberFormatException e) {
-      throw new RecipeException("Price must be a positive integer");
+      throw new RecipeException("Price must be a non-negative integer");
     }
     if (amtPrice >= 0) {
       this.price = amtPrice;
     } else {
-      throw new RecipeException("Price must be a positive integer");
+      throw new RecipeException("Price must be a non-negative integer");
     }
   }
 
@@ -80,19 +81,18 @@ public class Recipe {
 
   /**
    * Set the amount of coffee needed for this recipe.
-   * @param coffee  The amount of coffee to set.
    */
   public void setAmtCoffee(String coffee) throws RecipeException {
     int amtCoffee;
     try {
       amtCoffee = Integer.parseInt(coffee);
     } catch (NumberFormatException e) {
-      throw new RecipeException("Units of coffee must be a positive integer");
+      throw new RecipeException("Units of coffee must be a non-negative integer");
     }
     if (amtCoffee >= 0) {
       this.amtCoffee = amtCoffee;
     } else {
-      throw new RecipeException("Units of coffee must be a positive integer");
+      throw new RecipeException("Units of coffee must be a non-negative integer");
     }
   }
 
@@ -105,19 +105,18 @@ public class Recipe {
 
   /**
    * Set the amount of milk needed for this recipe.
-   * @param milk  The amount of milk to set.
    */
   public void setAmtMilk(String milk) throws RecipeException {
     int amtMilk;
     try {
       amtMilk = Integer.parseInt(milk);
     } catch (NumberFormatException e) {
-      throw new RecipeException("Units of milk must be a positive integer");
+      throw new RecipeException("Units of milk must be a non-negative integer");
     }
     if (amtMilk >= 0) {
       this.amtMilk = amtMilk;
     } else {
-      throw new RecipeException("Units of milk must be a positive integer");
+      throw new RecipeException("Units of milk must be a non-negative integer");
     }
   }
 
@@ -130,19 +129,18 @@ public class Recipe {
 
   /**
    * Set the amount of sugar needed for this recipe.
-   * @param sugar  The amount of sugar to set.
    */
   public void setAmtSugar(String sugar) throws RecipeException {
     int amtSugar;
     try {
       amtSugar = Integer.parseInt(sugar);
     } catch (NumberFormatException e) {
-      throw new RecipeException("Units of sugar must be a positive integer");
+      throw new RecipeException("Units of sugar must be a non-negative integer");
     }
     if (amtSugar >= 0) {
       this.amtSugar = amtSugar;
     } else {
-      throw new RecipeException("Units of sugar must be a positive integer");
+      throw new RecipeException("Units of sugar must be a non-negative integer");
     }
   }
 
@@ -155,19 +153,18 @@ public class Recipe {
 
   /**
    * Set the amount of chocolate needed for this recipe.
-   * @param chocolate  The amount of chocolate to set.
    */
   public void setAmtChocolate(String chocolate) throws RecipeException {
     int amtChocolate;
     try {
       amtChocolate = Integer.parseInt(chocolate);
     } catch (NumberFormatException e) {
-      throw new RecipeException("Units of chocolate must be a positive integer");
+      throw new RecipeException("Units of chocolate must be a non-negative integer");
     }
     if (amtChocolate >= 0) {
       this.amtChocolate = amtChocolate;
     } else {
-      throw new RecipeException("Units of chocolate must be a positive integer");
+      throw new RecipeException("Units of chocolate must be a non-negative integer");
     }
   }
 
@@ -209,3 +206,4 @@ public class Recipe {
   }
 
 }
+
